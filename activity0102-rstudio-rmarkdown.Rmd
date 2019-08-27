@@ -11,11 +11,16 @@ output: html_document
 library(tidyverse) 
 library(datasauRus)
 ```
-
+datasaurus_dozen %>%
+count(dataset) %>%
+print(13)
 
 ### Exercise 1
 
-(Type your answer to Exercise 1 here. This exercise does not require any R code.)
+Datasaurus_dozen file consists of 1846 rows and 3 columns. The variables included in data frame are:\
+1. dataset\
+2. x\
+3. y
 
 ### Exercise 2
 
