@@ -24,7 +24,7 @@ Datasaurus_dozen file consists of 1846 rows and 3 columns. The variables include
 
 ### Exercise 2
 
-#### plot the data in the dino dataset:
+#### Plot the data in the dino dataset:
 
 ```{r plot-dino, fig.height=3, fig.width=6}
 dino_data <- datasaurus_dozen %>%
@@ -34,27 +34,31 @@ ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
   geom_point()
 ```
 
-#### correlation between `x` and `y` in this dataset:
+#### Correlation between `x` and `y` in this dataset:
 
 ```{r cor-dino}
 dino_data %>%
   summarize(r = cor(x, y))
 ```
 
+
 ### Exercise 3
 
-(Add code and narrative as needed. Note that the R chunks are labeled with `plot-star` and `cor-star` to provide spaces to place the code for plotting and calculating the correlation coefficient. To finish, clean up the narrative by removing these instructions.)
+#### Plot the data in the star dataset:
 
-Blah blah blah...
+```{r plot-star, fig.height=3, fig.width=6}
+star_data <- datasaurus_dozen %>%
+  filter(dataset == "star")
 
-```{r plot-star}
-
+ggplot(data = star_data, mapping = aes(x = x, y = y)) +
+  geom_point()
 ```
 
-I'm some text, you should replace me with more meaningful text...
+#### Correlation between `x` and `y` in this dataset:
 
 ```{r cor-star}
-
+star_data %>%
+  summarize(r = cor(x, y))
 ```
 
 ### Exercise 4
