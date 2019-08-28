@@ -2,7 +2,10 @@
 title: "Activity 1.2 - RStudio and R Markdown"
 author: "Shreya shakya"
 date: "8/26/2019"
-output: html_document
+output: 
+  html_document: 
+    fig_height: 8
+    fig_width: 8
 ---
 
 ### Load packages
@@ -80,8 +83,22 @@ circle_data %>%
   summarize(r = cor(x, y))
 ```
 
-#### There is not much difference in r value of circle compared to R value of dino. The difference is only 0.0038.
+#### There is not much difference in r value of circle compared to R value of dino. 
 
 ### Exercise 5
 
-(Add code and narrative as needed. To add R chunks either type out the backticks, curly braces, and the letter `r` or use the Insert chunk button above, green C+.)
+#### Plot the data in the all dataset: 
+```{r}
+ggplot(data = datasaurus_dozen, aes(x = x, y = y, color = dataset)) +
+  geom_point() +
+  facet_wrap(~ dataset, ncol = 3) +
+  theme(legend.position = "none")
+```
+
+#### Summary correlation:
+```{r}
+datasaurus_dozen %>%
+  group_by(dataset) %>%
+  summarize(r = cor(x, y)) %>%
+  print(13)
+```
